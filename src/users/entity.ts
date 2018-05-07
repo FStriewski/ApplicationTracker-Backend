@@ -1,6 +1,6 @@
 import { PrimaryGeneratedColumn, Column, OneToMany, BaseEntity, Entity } from "typeorm";
 import { MinLength, IsString, IsEmail } from 'class-validator';
-import {Products} from '../products/entity'
+import {Companys} from '../companys/entity'
 import { Exclude } from 'class-transformer';
 import * as bcrypt from 'bcrypt'
 
@@ -40,7 +40,7 @@ export class Users extends BaseEntity {
         return bcrypt.compare(rawPassword, this.password)
     }
 
-    @OneToMany(_ => Products, product => product.user )
-    products: Products[]
+    @OneToMany(_ => Companys, company => company.user )
+    companys: Companys[]
 
 }

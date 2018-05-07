@@ -14,31 +14,31 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const routing_controllers_1 = require("routing-controllers");
 const entity_1 = require("./entity");
-let ProductController = class ProductController {
-    async getAllProducts() {
-        const products = await entity_1.Products.find();
-        return products;
+let CompanyController = class CompanyController {
+    async getAllCompanys() {
+        const companys = await entity_1.Companys.find();
+        return companys;
     }
-    async getSingleProduct(id) {
-        const product = await entity_1.Products.findOneById(id);
-        if (!product)
-            throw new routing_controllers_1.NotFoundError("No product found");
-        return product;
+    async getSingleCompany(id) {
+        const company = await entity_1.Companys.findOneById(id);
+        if (!company)
+            throw new routing_controllers_1.NotFoundError("No company found");
+        return company;
     }
-    async createProduct(body) {
-        const product = await entity_1.Products.create(body).save();
-        return product;
+    async createCompany(body) {
+        const company = await entity_1.Companys.create(body).save();
+        return company;
     }
-    async updateProduct(id, update) {
-        const product = await entity_1.Products.findOneById(id);
-        if (!product)
-            throw new routing_controllers_1.NotFoundError("Product not found");
-        return entity_1.Products.merge(product, update).save();
+    async updateCompany(id, update) {
+        const company = await entity_1.Companys.findOneById(id);
+        if (!company)
+            throw new routing_controllers_1.NotFoundError("Company not found");
+        return entity_1.Companys.merge(company, update).save();
     }
-    deleteProduct(id) {
+    deleteCompany(id) {
         try {
             console.log("Deleting...");
-            entity_1.Products.removeById(id);
+            entity_1.Companys.removeById(id);
             return id;
         }
         catch (e) {
@@ -47,42 +47,42 @@ let ProductController = class ProductController {
     }
 };
 __decorate([
-    routing_controllers_1.Get('/products'),
+    routing_controllers_1.Get('/companys'),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
-], ProductController.prototype, "getAllProducts", null);
+], CompanyController.prototype, "getAllCompanys", null);
 __decorate([
-    routing_controllers_1.Get('/products/:id([0-9]+)'),
+    routing_controllers_1.Get('/companys/:id([0-9]+)'),
     __param(0, routing_controllers_1.Param("id")),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", Promise)
-], ProductController.prototype, "getSingleProduct", null);
+], CompanyController.prototype, "getSingleCompany", null);
 __decorate([
-    routing_controllers_1.Post('/products'),
+    routing_controllers_1.Post('/companys'),
     __param(0, routing_controllers_1.Body()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [entity_1.Products]),
+    __metadata("design:paramtypes", [entity_1.Companys]),
     __metadata("design:returntype", Promise)
-], ProductController.prototype, "createProduct", null);
+], CompanyController.prototype, "createCompany", null);
 __decorate([
-    routing_controllers_1.Put('/products/:id([0-9]+)'),
+    routing_controllers_1.Put('/companys/:id([0-9]+)'),
     __param(0, routing_controllers_1.Param("id")),
     __param(1, routing_controllers_1.Body()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number, Object]),
     __metadata("design:returntype", Promise)
-], ProductController.prototype, "updateProduct", null);
+], CompanyController.prototype, "updateCompany", null);
 __decorate([
-    routing_controllers_1.Delete('/products/:id([0-9]+)'),
+    routing_controllers_1.Delete('/companys/:id([0-9]+)'),
     __param(0, routing_controllers_1.Param("id")),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", void 0)
-], ProductController.prototype, "deleteProduct", null);
-ProductController = __decorate([
+], CompanyController.prototype, "deleteCompany", null);
+CompanyController = __decorate([
     routing_controllers_1.JsonController()
-], ProductController);
-exports.default = ProductController;
+], CompanyController);
+exports.default = CompanyController;
 //# sourceMappingURL=controller.js.map

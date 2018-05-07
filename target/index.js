@@ -4,7 +4,7 @@ require("reflect-metadata");
 const routing_controllers_1 = require("routing-controllers");
 const db_1 = require("./db");
 const controller_1 = require("./users/controller");
-const controller_2 = require("./products/controller");
+const controller_2 = require("./companys/controller");
 const controller_3 = require("./logins/controller");
 const http_1 = require("http");
 const Koa = require("koa");

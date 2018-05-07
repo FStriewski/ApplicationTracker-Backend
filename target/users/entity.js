@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const typeorm_1 = require("typeorm");
 const class_validator_1 = require("class-validator");
-const entity_1 = require("../products/entity");
+const entity_1 = require("../companys/entity");
 const class_transformer_1 = require("class-transformer");
 const bcrypt = require("bcrypt");
 let Users = class Users extends typeorm_1.BaseEntity {
@@ -49,9 +49,9 @@ __decorate([
     __metadata("design:type", String)
 ], Users.prototype, "password", void 0);
 __decorate([
-    typeorm_1.OneToMany(_ => entity_1.Products, product => product.user),
+    typeorm_1.OneToMany(_ => entity_1.Companys, company => company.user),
     __metadata("design:type", Array)
-], Users.prototype, "products", void 0);
+], Users.prototype, "companys", void 0);
 Users = __decorate([
     typeorm_1.Entity()
 ], Users);

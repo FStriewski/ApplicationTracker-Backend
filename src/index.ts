@@ -2,7 +2,7 @@ import 'reflect-metadata'
 import { createKoaServer, Action, BadRequestError, useKoaServer } from "routing-controllers"
 import setupDb from './db'
 import UserController from './users/controller'
-import ProductController from './products/controller'
+import CompanysController from './companys/controller'
 import LoginController from './logins/controller'
 import { Server } from 'http'
 import * as Koa from 'koa'
@@ -17,7 +17,7 @@ useKoaServer(app, {
     cors: true,
     controllers: [
         UserController,
-        ProductController,
+        CompanysController,
         LoginController,
     ],
     authorizationChecker: (action: Action) => {

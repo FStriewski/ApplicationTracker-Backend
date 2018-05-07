@@ -3,34 +3,38 @@ import { IsString, IsNumber } from "class-validator";
 import { Users }  from '../users/entity'
 
 @Entity()
-export class Products extends BaseEntity{
+export class Companys extends BaseEntity{
     
     @PrimaryGeneratedColumn()
     id?: number
 
     @IsString()
     @Column('text')
-    title: string
+    name: string
 
     @IsString()
     @Column('text')
-    author: string
+    market: string
 
     @IsString()
     @Column('text')
-    year: string
+    focus: string
 
     @IsNumber()
-    @Column('integer', {nullable: false})
-    price: number
+    @Column('integer', {nullable: true})
+    score: number
 
     @IsString()
     @Column('text', { nullable: true })
-    description: string
+    openpos: string
+
+    @IsString()
+    @Column('text', { nullable: true })
+    applied: string
 
     @Column('text', { nullable: true })
-    imageurl: string
+    link: string
 
-    @ManyToOne(_ => Users, user => user.products, { eager: true })
+    @ManyToOne(_ => Users, user => user.companys, { eager: true })
     user: Users
 }
