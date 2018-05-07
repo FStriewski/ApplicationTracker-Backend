@@ -8,15 +8,15 @@ export class Companys extends BaseEntity{
     @PrimaryGeneratedColumn()
     id?: number
 
-    @IsString()
+    // @IsString()
     @Column('text')
     name: string
 
-    @IsString()
+    // @IsString()
     @Column('text')
     market: string
 
-    @IsString()
+    // @IsString()
     @Column('text')
     focus: string
 
@@ -24,16 +24,19 @@ export class Companys extends BaseEntity{
     @Column('integer', {nullable: true})
     score: number
 
-    @IsString()
-    @Column('text', { nullable: true })
-    openpos: string
+    // @IsString()
+    @Column('text', { default: "NL", nullable: true })
+    language: string
 
-    @IsString()
+    // @IsString()
     @Column('text', { nullable: true })
     applied: string
 
     @Column('text', { nullable: true })
     link: string
+
+    @Column('text', { nullable: true })
+    comments: string
 
     @ManyToOne(_ => Users, user => user.companys, { eager: true })
     user: Users

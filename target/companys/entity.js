@@ -19,34 +19,34 @@ __decorate([
     __metadata("design:type", Number)
 ], Companys.prototype, "id", void 0);
 __decorate([
-    class_validator_1.IsString(),
     typeorm_1.Column('text'),
     __metadata("design:type", String)
-], Companys.prototype, "title", void 0);
+], Companys.prototype, "name", void 0);
 __decorate([
-    class_validator_1.IsString(),
     typeorm_1.Column('text'),
     __metadata("design:type", String)
-], Companys.prototype, "author", void 0);
+], Companys.prototype, "market", void 0);
 __decorate([
-    class_validator_1.IsString(),
     typeorm_1.Column('text'),
     __metadata("design:type", String)
-], Companys.prototype, "year", void 0);
+], Companys.prototype, "focus", void 0);
 __decorate([
     class_validator_1.IsNumber(),
-    typeorm_1.Column('integer', { nullable: false }),
+    typeorm_1.Column('integer', { nullable: true }),
     __metadata("design:type", Number)
-], Companys.prototype, "price", void 0);
+], Companys.prototype, "score", void 0);
 __decorate([
-    class_validator_1.IsString(),
+    typeorm_1.Column('text', { default: "NL", nullable: true }),
+    __metadata("design:type", String)
+], Companys.prototype, "language", void 0);
+__decorate([
     typeorm_1.Column('text', { nullable: true }),
     __metadata("design:type", String)
-], Companys.prototype, "description", void 0);
+], Companys.prototype, "applied", void 0);
 __decorate([
     typeorm_1.Column('text', { nullable: true }),
     __metadata("design:type", String)
-], Companys.prototype, "imageurl", void 0);
+], Companys.prototype, "link", void 0);
 __decorate([
     typeorm_1.ManyToOne(_ => entity_1.Users, user => user.companys, { eager: true }),
     __metadata("design:type", entity_1.Users)
