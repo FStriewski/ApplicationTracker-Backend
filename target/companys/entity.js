@@ -48,6 +48,10 @@ __decorate([
     __metadata("design:type", String)
 ], Companys.prototype, "link", void 0);
 __decorate([
+    typeorm_1.Column('text', { nullable: true }),
+    __metadata("design:type", String)
+], Companys.prototype, "comments", void 0);
+__decorate([
     typeorm_1.ManyToOne(_ => entity_1.Users, user => user.companys, { eager: true }),
     __metadata("design:type", entity_1.Users)
 ], Companys.prototype, "user", void 0);

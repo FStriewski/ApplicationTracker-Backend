@@ -13,15 +13,15 @@ export class Companys extends BaseEntity{
     name: string
 
     // @IsString()
-    @Column('text')
+    @Column('text', { nullable: true })
     market: string
 
     // @IsString()
-    @Column('text')
+    @Column('text', { nullable: true })
     focus: string
 
     @IsNumber()
-    @Column('integer', {nullable: true})
+    @Column('integer', {nullable: false})
     score: number
 
     // @IsString()
@@ -32,7 +32,7 @@ export class Companys extends BaseEntity{
     @Column('text', { nullable: true })
     applied: string
 
-    @Column('text', { nullable: true })
+    @Column('text', { nullable: false })
     link: string
 
     @Column('text', { nullable: true })
